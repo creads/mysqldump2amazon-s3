@@ -4,7 +4,7 @@
 
 DB_USER="root"
 DB_PASSWORD="password"
-DB_NAME=--all-databse
+DB_NAME=--all-databases
 TMP_PATH=~/
 BACKUP_NAME=backup
 S3_BUCKET=bucket
