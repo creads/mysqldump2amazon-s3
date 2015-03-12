@@ -15,6 +15,7 @@ Dump MySQL databases and puts them in Amazon S3.
 
 3. Download script
 
+		cd /usr/local/bin
 		wget https://raw.githubusercontent.com/creads/mysqldump2amazon-s3/master/mysqldump2amazon-s3.sh
 		chmod +x mysqldump2amazon-s3.sh
 
@@ -29,4 +30,4 @@ Dump MySQL databases and puts them in Amazon S3.
 Optionaly edit your crontab
 
 		crontab -e
-		0 3 * * * sh /root/mysqldump2amazon-s3.sh
+		0 3 * * * sh /usr/local/bin/mysqldump2amazon-s3.sh
