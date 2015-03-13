@@ -1,33 +1,39 @@
-***REMOVED***
-***REMOVED***
+# mysqldump2amazon-s3
+Dump MySQL databases and puts them in Amazon S3.
 
-***REMOVED***
+## INSTALL
 
-***REMOVED***
+1. Install s3cmd
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-		
-***REMOVED***
+        wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
+        sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
+        sudo apt-get update && sudo apt-get install s3cmd
 
-***REMOVED***
+2. Configure s3cmd
 
-***REMOVED***
+        s3cmd --configure
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
+3. Download script
 
-4. Edit script config
+        cd /usr/local/bin
+        wget https://raw.githubusercontent.com/creads/mysqldump2amazon-s3/master/mysqldump2amazon-s3.sh
+        chmod +x mysqldump2amazon-s3.sh
+4. Create mysql user
 
-***REMOVED***
+        mysql -u root -p
+        create user 'backup'@'localhost' identified by '***';
+        grant select, lock tables  on *.* to 'backup'@'localhost';
+        FLUSH PRIVILEGES;
+        exit;
+5. Edit script config
 
-5. Execute
+        nano mysqldump2amazon-s3.sh
 
-***REMOVED***
+6. Execute
 
-***REMOVED***
+        ./mysqldump2amazon-s3.sh
 
-***REMOVED***
-***REMOVED***
+Optionaly edit your crontab
+
+        crontab -e
+        0 3 * * * sh /usr/local/bin/mysqldump2amazon-s3.sh
