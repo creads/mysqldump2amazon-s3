@@ -3,7 +3,7 @@
 # BEGIN EDIT
 
 DB_USER="root"
-DB_PASSWORD="password"
+DB_PASSWORD='password'
 DB_NAME=--all-databases
 TMP_PATH=~/
 BACKUP_NAME=backup
@@ -16,7 +16,7 @@ BACKUP_FILE=${TMP_PATH}${BACKUP_NAME}$(date +"_%d-%m-%Y_%H:%M:%S").sql.gz
 
 echo "Dump database ${DB_NAME}"
 
-mysqldump --user=${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_FILE}
+mysqldump --user=${DB_USER} -p${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_FILE}
 
 echo "Backup file ${BACKUP_FILE} created"
 
