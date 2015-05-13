@@ -3,11 +3,11 @@
 # BEGIN EDIT
 
 TMP_PATH=~/
-BACKUP_NAME=backup_images
-S3_BUCKET=creads-backup
-S3_PATH=concours-camaieu30ans.fr
+BACKUP_NAME=backup
+S3_BUCKET=bucket
+S3_PATH=path
 
-WEB_ROOT=/usr/share/nginx/html/camaieu30/web
+WEB_ROOT=/folder/to/back/up
 
 # END EDIT
 
