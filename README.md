@@ -21,8 +21,8 @@ Dump MySQL databases and puts them in Amazon S3.
 4. Create mysql user
 
         mysql -u root -p
-        create user 'backup'@'localhost' identified by '***';
-        grant select, lock tables  on *.* to 'backup'@'localhost';
+        CREATE USER 'backup'@'localhost';
+        GRANT SELECT, LOCK TABLES ON *.* TO 'backup'@'localhost' IDENTIFIED BY '***';
         FLUSH PRIVILEGES;
         exit;
 5. Edit script config
